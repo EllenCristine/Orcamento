@@ -346,9 +346,9 @@ public class Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfValorAvaliacaoITBIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfValorAvaliacaoITBIActionPerformed
-        if(jtfValorAvaliacaoITBI){
+        /*if(jtfValorAvaliacaoITBI){
             
-        }
+        }*/
     }//GEN-LAST:event_jtfValorAvaliacaoITBIActionPerformed
 
     private void jtfValorAvaliacaoITBIKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorAvaliacaoITBIKeyPressed
