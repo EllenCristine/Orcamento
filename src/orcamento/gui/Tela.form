@@ -89,7 +89,7 @@
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jbCalcularITBI" max="32767" attributes="0"/>
-                                  <Component id="jbCopiarITBI" pref="73" max="32767" attributes="0"/>
+                                  <Component id="jbCopiarITBI" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -161,6 +161,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtfValorAvaliacaoITBI">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfValorAvaliacaoITBIActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtfValorAvaliacaoITBIKeyPressed"/>
@@ -255,7 +258,7 @@
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jbCalcularITCD" max="32767" attributes="0"/>
-                                  <Component id="jbCopiarITCD" pref="73" max="32767" attributes="0"/>
+                                  <Component id="jbCopiarITCD" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -401,8 +404,11 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupITCD"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Invent&#xe1;rio (6%)"/>
+                <Property name="text" type="java.lang.String" value="Invent&#xe1;rio (4%)"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbInventarioActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

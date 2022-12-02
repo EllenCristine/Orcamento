@@ -18,8 +18,10 @@ public class Tela extends javax.swing.JFrame {
     /**
      * Creates new form jpOrcamento
      */
+    
     public Tela() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -81,6 +83,7 @@ public class Tela extends javax.swing.JFrame {
 
         jlTotalITBI.setText("Total:");
 
+        jtfValorAvaliacaoITBI.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jtfValorAvaliacaoITBI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfValorAvaliacaoITBIActionPerformed(evt);
@@ -152,7 +155,7 @@ public class Tela extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jpITBILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbCalcularITBI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbCopiarITBI, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))))
+                            .addComponent(jbCopiarITBI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(199, Short.MAX_VALUE))
         );
         jpITBILayout.setVerticalGroup(
@@ -263,7 +266,12 @@ public class Tela extends javax.swing.JFrame {
         });
 
         buttonGroupITCD.add(jrbInventario);
-        jrbInventario.setText("Inventário (6%)");
+        jrbInventario.setText("Inventário (4%)");
+        jrbInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbInventarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpITCDLayout = new javax.swing.GroupLayout(jpITCD);
         jpITCD.setLayout(jpITCDLayout);
@@ -290,7 +298,7 @@ public class Tela extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jpITCDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbCalcularITCD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbCopiarITCD, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))))
+                            .addComponent(jbCopiarITCD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(jpITCDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jrbDoacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,12 +376,15 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfRegistroITBIActionPerformed
 
     private void jbCalcularITBIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcularITBIActionPerformed
+        Calculo calc = new Calculo();
+        Formatter form = new Formatter();
+        
         double itbi;
         double escritura;
         double registro;
         double valorAvaliacao = Double.parseDouble(jtfValorAvaliacaoITBI.getText());
-        Calculo calc = new Calculo();
-        Formatter form = new Formatter();
+
+        //calc.CalcularITBI(valorAvaliacao);
 
         jtfValorAvaliacaoITBI.setText(form.format(valorAvaliacao));
 
@@ -440,12 +451,13 @@ public class Tela extends javax.swing.JFrame {
         jtfValorAvaliacaoITCD.setText(form.format(valorAvaliacao));
 
         //ITCD
-        if (jrbDoacao.isEnabled()){
-            itcd = calc.calculoITCD3(valorAvaliacao);} 
+        /*if (jrbDoacao.isEnabled()){
+            itcd = calc.calculoITCD3(valorAvaliacao);
+        } else {  
+            itcd = calc.calculoITCD4(valorAvaliacao);  
+        } */
+           
         
-        if (jrbInventario.isEnabled()){ 
-            itcd = calc.calculoITCD6(valorAvaliacao);    
-        }
         jtfITCD.setText(form.format(itcd));
 
         //Escritura
@@ -465,6 +477,7 @@ public class Tela extends javax.swing.JFrame {
         // Botão Copiar
         String stringCopiada = new String();
 
+
         stringCopiada = "Avaliação: "+ jtfValorAvaliacaoITCD.getText() + "\n" +
         "ITCD: " + jtfITCD.getText()+ "\n" +
         "Escritura: " + jtfValorAvaliacaoITCD.getText()+ "\n" +
@@ -478,7 +491,13 @@ public class Tela extends javax.swing.JFrame {
 
     private void jrbDoacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDoacaoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jrbDoacaoActionPerformed
+
+    private void jrbInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbInventarioActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jrbInventarioActionPerformed
 
     /**
      * @param args the command line arguments
